@@ -3,6 +3,8 @@ import url from 'url';
 import parseTime from './parsers/parseTime';
 import parseUnix from './parsers/parseUnix';
 
+const port = process.env.PORT || 3000;
+
 function handleResponse(req, res) {
   let response;
   const obj = url.parse(req.url, true);
@@ -22,6 +24,6 @@ function handleResponse(req, res) {
 
 }
 
-http.createServer(handleResponse).listen(3000, '127.0.0.1');
+http.createServer(handleResponse).listen(port, '127.0.0.1');
 
-console.log('Server running on localhost:3000');
+console.log('Server running on localhost:' + port);
