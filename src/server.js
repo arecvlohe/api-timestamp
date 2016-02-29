@@ -18,7 +18,7 @@ function handleResponse(req, res) {
   if (response) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write(JSON.stringify(response));
-    res.end(console.log('Parsing data', obj));
+    res.end(console.log('Parsing data'));
   } else {
     res.writeHead(400);
     res.end();
@@ -26,6 +26,6 @@ function handleResponse(req, res) {
 
 }
 
-http.createServer(handleResponse).listen(port, '127.0.0.1');
+http.createServer(handleResponse).listen(port);
 
 console.log('Server running on localhost:' + port);
