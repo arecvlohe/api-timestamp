@@ -8,7 +8,7 @@ export default function(obj) {
   const sec = time.second();
 
   if (!valid)
-    return 'Invalid ISO-format';
+    return { error: 'Invalid ISO-format' };
 
   return {
     hour: hour,

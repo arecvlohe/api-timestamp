@@ -6,7 +6,7 @@ export default function(obj) {
   const unix = time.valueOf();
 
   if (!valid)
-    return 'Invalid ISO-format';
+    return { error:'Invalid ISO-format' };
 
   return {
     unix: unix,
