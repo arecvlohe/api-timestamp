@@ -12,11 +12,13 @@ function handleResponse(req, res) {
     response = parseTime(obj);
   if (obj.pathname === '/api/unixtime')
     response = parseUnix(obj);
+  if (obj.pathname === '/')
+    response = 'Hello World!';
 
   if (response) {
     res.writeHead(200, { 'Content-Type': 'application/json' });
     res.write(JSON.stringify(response));
-    res.end(console.log('Parsing data'));
+    res.end(console.log('Parsing data', obj));
   } else {
     res.writeHead(400);
     res.end();
